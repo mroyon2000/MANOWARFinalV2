@@ -622,6 +622,10 @@ namespace Digi_Com.AppForms
                         {
                             txtDisplay.Text = "Session Created.";
                             txtDisplay.Text += "\r\nSecret Key: " + Global.GenKey;
+
+                            _db.writeLog("Secret Key: " + Global.GenKey);
+
+
                             txtDisplay.ScrollToCaret();
 
                             Trport.WriteLine("304#" + Global.MyStationID + "00" + "#00#00");
