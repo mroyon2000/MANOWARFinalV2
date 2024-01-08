@@ -249,7 +249,7 @@ namespace Digi_Com.AppForms
 
 
                 #region Pattern 000#00
-                string pattern = @"\d{3}#\d{4}";
+                string pattern = @"\d{3}#\d{4}.+";
                 string input = messageFromArduino;
                 Match m = Regex.Match(input, pattern, RegexOptions.IgnoreCase);
 

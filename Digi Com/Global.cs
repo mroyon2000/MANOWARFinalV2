@@ -49,6 +49,15 @@ namespace Digi_Com
         }
 
 
+
+        private static string _genKey = string.Empty;
+        public static string GenKey
+        {
+            get { return _genKey; }
+            set { _genKey = value; }
+        }
+
+
         public static string GlobalVar
         {
             get { return _globalVar; }
