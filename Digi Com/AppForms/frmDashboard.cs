@@ -640,8 +640,7 @@ namespace Digi_Com.AppForms
                         }
                   ));
 
-                        outputFilename = outputFolder + $"Receive {DateTime.Now:yyy-MM-dd HH-mm-ss}.wav";
-
+                        outputFilename = outputFolder + $"Receive_" + DateTime.Now.ToString("MM_dd_yyyy_HH_mm_ss") + ".txt";
                     }
 
                     #endregion
