@@ -72,7 +72,7 @@ namespace Digi_Com.AppForms
 
         }
 
-        private void frmDashboard_Load(object sender, EventArgs e)
+        private void frmDashboard_Load(object sender, EventArgs e)  
         {
 
             setStaticValues();
@@ -86,12 +86,35 @@ namespace Digi_Com.AppForms
             _loadLogs();
 
             wplayer = new WindowsMediaPlayer();
+            PortManagementOpener();
 
 
+            //portManager = new SerialPortManager();
 
+            ////Scanner Port
+            //Scport = portManager.OpenPort(Global.FPCOMPORT);
+            //Scport.DataReceived += new SerialDataReceivedEventHandler(ScPort_DataReceived);
+
+            ////Tr POrt
+            //Trport = portManager.OpenPort(Global.TrnsComPort);
+            //Trport.DataReceived += new SerialDataReceivedEventHandler(TrPort_DataReceived);
+            //if (!Trport.IsOpen) Trport.Open();
+
+        }
+
+
+        private void PortManagementOpener()
+        {
             portManager = new SerialPortManager();
 
+
             //Scanner Port
+            if (Scport == null)
+                Scport = new SerialPort();
+
+            if (Trport == null)
+                Trport = new SerialPort();
+
             Scport = portManager.OpenPort(Global.FPCOMPORT);
             Scport.DataReceived += new SerialDataReceivedEventHandler(ScPort_DataReceived);
 
@@ -99,8 +122,24 @@ namespace Digi_Com.AppForms
             Trport = portManager.OpenPort(Global.TrnsComPort);
             Trport.DataReceived += new SerialDataReceivedEventHandler(TrPort_DataReceived);
             if (!Trport.IsOpen) Trport.Open();
-
         }
+
+
+        private void PortManagementCloser()
+        {
+            if (Trport != null && Trport.IsOpen)
+            {
+                Trport.Close();
+                Trport.Dispose();
+            }
+            if (Scport != null && Scport.IsOpen)
+            {
+                Scport.Close();
+                Scport.Dispose();
+            }
+        }
+
+
 
         private void btnScheduleManager_Click(object sender, EventArgs e)
         {
@@ -675,6 +714,8 @@ namespace Digi_Com.AppForms
                         wplayer.settings.setMode("loop", false);
                     }
                    ));
+                    PortManagementCloser();
+                    PortManagementOpener();
                 }
 
 
