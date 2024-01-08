@@ -246,10 +246,10 @@ namespace Digi_Com.AppForms
                 }
 
 
+                #region Pattern 000#0000
 
-
-                #region Pattern 000#00
-                string pattern = @"\d{3}#\d{4}.+";
+                string pattern = @"^\d{3}#\d{4}#\d+#.+#\d+";
+                //string pattern = @"\d{3}#\d{4}";
                 string input = messageFromArduino;
                 Match m = Regex.Match(input, pattern, RegexOptions.IgnoreCase);
 
@@ -267,6 +267,13 @@ namespace Digi_Com.AppForms
 
                     Console.WriteLine("Response Code: " + code);
                     Console.WriteLine("Response Caller ID: " + CallerID);
+
+                    if (Global.GenKey == string.Empty)
+                    {
+                        
+                        string caller_personel_fingre_key_no = tokens[2];
+                        string GenKey = tokens[3];
+                    }
 
 
                     #region Code 101 When There is an Incoming Call
@@ -302,7 +309,7 @@ namespace Digi_Com.AppForms
                                     wplayer.settings.setMode("loop", false);
 
                                     //Send Call Accepted Resoonse to the Caller
-                                    Trport.WriteLine("300#" + Global.MyStationID + "00");
+                                    Trport.WriteLine("300#" + Global.MyStationID + "00" + "#00#00");
                                     txtDisplay.Text = "Creating Session.......";
                                     Global.isCaller = false;
                                 }
@@ -313,7 +320,7 @@ namespace Digi_Com.AppForms
                                     wplayer.controls.play();
                                     wplayer.settings.setMode("loop", false);
                                     //Send Call Rejected Code to Caller
-                                    Trport.WriteLine("100#" + Global.MyStationID + "00");
+                                    Trport.WriteLine("100#" + Global.MyStationID + "00" + "#00#00");
 
                                 }
 
@@ -397,7 +404,7 @@ namespace Digi_Com.AppForms
                                 txtDisplay.ScrollToCaret();
                                 Thread.Sleep(500);
 
-                                Trport.WriteLine("305#" + Global.MyStationID + "00");
+                                Trport.WriteLine("305#" + Global.MyStationID + "00" + "#00#00");
                             }
 
 
@@ -420,7 +427,7 @@ namespace Digi_Com.AppForms
 
 
                             //File Me File
-                            Trport.WriteLine("306#" + Global.MyStationID + "00");
+                            Trport.WriteLine("306#" + Global.MyStationID + "00" + "#00#00");
 
 
 
@@ -565,10 +572,10 @@ namespace Digi_Com.AppForms
                         this.BeginInvoke(new Action(delegate ()
                         {
                             txtDisplay.Text = "Session Created.";
-                            txtDisplay.Text += "\r\nSecret Key: " + Global.SecretKey;
+                            txtDisplay.Text += "\r\nSecret Key: " + Global.GenKey;
                             txtDisplay.ScrollToCaret();
 
-                            Trport.WriteLine("304#" + Global.MyStationID + "00");
+                            Trport.WriteLine("304#" + Global.MyStationID + "00" + "#00#00");
                         }
                         ));
                     }

@@ -548,9 +548,10 @@ namespace Digi_Com.AppForms
                     }
                 }
 
+                comTR.WriteLine("101#" + Global.MyStationID + DestinationStation + "#" + Global.personel_fingre_key_no + "#" + Global.GenKey);
 
 
-                comTR.WriteLine("101#" + Global.MyStationID+ DestinationStation + "#" + Global.personel_fingre_key_no + "#" + Global.GenKey);
+                //comTR.WriteLine("101#" + Global.MyStationID+ DestinationStation);
                 Global.isCaller = true;
             }
             {
