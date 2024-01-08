@@ -307,11 +307,16 @@ namespace Digi_Com.AppForms
                     Console.WriteLine("Response Code: " + code);
                     Console.WriteLine("Response Caller ID: " + CallerID);
 
-                    if (Global.GenKey == string.Empty)
+                    if (tokens.Length>=4)
                     {
-                        
-                        string caller_personel_fingre_key_no = tokens[2];
-                        string GenKey = tokens[3];
+                        if (tokens[2] != "00")
+                        {
+                            string caller_personel_fingre_key_no = tokens[2];
+                            string GenKey = tokens[3];
+
+                            Global.GenKey = GenKey;
+                            Global.receiver_personel_fingre_key_no = caller_personel_fingre_key_no;
+                        }
                     }
 
 

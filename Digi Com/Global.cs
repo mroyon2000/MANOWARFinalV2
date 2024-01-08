@@ -49,6 +49,14 @@ namespace Digi_Com
         }
 
 
+        private static string _receiver_personel_fingre_key_no = "0";
+        public static string receiver_personel_fingre_key_no
+        {
+            get { return _receiver_personel_fingre_key_no; }
+            set { _receiver_personel_fingre_key_no = value; }
+        }
+
+
 
         private static string _genKey = string.Empty;
         public static string GenKey
