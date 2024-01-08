@@ -640,7 +640,7 @@ namespace Digi_Com.AppForms
                         }
                   ));
 
-                        outputFilename = outputFolder + $"Receive_" + DateTime.Now.ToString("MM_dd_yyyy_HH_mm_ss") + ".txt";
+                        
                     }
 
                     #endregion
@@ -671,6 +671,7 @@ namespace Digi_Com.AppForms
 
             try
             {
+                outputFilename = outputFolder + "\\Receive_" + DateTime.Now.ToString("MM_dd_yyyy_HH_mm_ss") + ".txt";
 
                 Global.byteArrayList.Add(inputData);
 
