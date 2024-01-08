@@ -524,9 +524,9 @@
             this.label6.Location = new System.Drawing.Point(131, 55);
             this.label6.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(353, 76);
+            this.label6.Size = new System.Drawing.Size(167, 76);
             this.label6.TabIndex = 8;
-            this.label6.Text = "DIGI COM";
+            this.label6.Text = "PFS";
             // 
             // pictureBox1
             // 

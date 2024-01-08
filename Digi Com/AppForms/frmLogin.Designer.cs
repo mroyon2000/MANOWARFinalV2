@@ -34,7 +34,6 @@
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.lblAuthRequiredHeader = new System.Windows.Forms.Label();
             this.lblAuthRequired = new System.Windows.Forms.Label();
             this.btnClose = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelFIngreImage = new System.Windows.Forms.Panel();
@@ -47,6 +46,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cmbStation = new System.Windows.Forms.ComboBox();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblAuthRequiredHeader = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // HomeElipse
@@ -66,19 +67,6 @@
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // lblAuthRequiredHeader
-            // 
-            this.lblAuthRequiredHeader.AutoSize = true;
-            this.lblAuthRequiredHeader.BackColor = System.Drawing.Color.Transparent;
-            this.lblAuthRequiredHeader.Font = new System.Drawing.Font("Tahoma", 15.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAuthRequiredHeader.ForeColor = System.Drawing.Color.DimGray;
-            this.lblAuthRequiredHeader.Location = new System.Drawing.Point(442, 31);
-            this.lblAuthRequiredHeader.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.lblAuthRequiredHeader.Name = "lblAuthRequiredHeader";
-            this.lblAuthRequiredHeader.Size = new System.Drawing.Size(592, 64);
-            this.lblAuthRequiredHeader.TabIndex = 1;
-            this.lblAuthRequiredHeader.Text = "Authentication Required";
             // 
             // lblAuthRequired
             // 
@@ -239,6 +227,32 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 11.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DimGray;
+            this.label4.Location = new System.Drawing.Point(289, 67);
+            this.label4.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(859, 53);
+            this.label4.TabIndex = 14;
+            this.label4.Text = " Authentication Required";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblAuthRequiredHeader
+            // 
+            this.lblAuthRequiredHeader.BackColor = System.Drawing.Color.Transparent;
+            this.lblAuthRequiredHeader.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.lblAuthRequiredHeader.ForeColor = System.Drawing.Color.DimGray;
+            this.lblAuthRequiredHeader.Location = new System.Drawing.Point(17, -3);
+            this.lblAuthRequiredHeader.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblAuthRequiredHeader.Name = "lblAuthRequiredHeader";
+            this.lblAuthRequiredHeader.Size = new System.Drawing.Size(1387, 70);
+            this.lblAuthRequiredHeader.TabIndex = 13;
+            this.lblAuthRequiredHeader.Text = "Long Range Wireless Communication with PFS";
+            this.lblAuthRequiredHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -247,6 +261,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1426, 736);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblAuthRequiredHeader);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbStation);
@@ -258,7 +274,6 @@
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblAuthRequired);
-            this.Controls.Add(this.lblAuthRequiredHeader);
             this.Controls.Add(this.panelFIngreImage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
@@ -276,7 +291,6 @@
         private System.Drawing.Printing.PrintDocument printDocument1;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.Label lblAuthRequiredHeader;
         private System.Windows.Forms.Panel panelFIngreImage;
         private System.Windows.Forms.Label lblAuthRequired;
         private Bunifu.Framework.UI.BunifuFlatButton btnClose;
@@ -289,6 +303,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbStation;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblAuthRequiredHeader;
     }
 }
 

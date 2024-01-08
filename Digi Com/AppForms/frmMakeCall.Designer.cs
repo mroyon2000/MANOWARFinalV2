@@ -82,19 +82,20 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.chkListStations);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(9, 42);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(24, 100);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(165, 244);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(440, 582);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
             // chkListStations
             // 
             this.chkListStations.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.chkListStations.FormattingEnabled = true;
-            this.chkListStations.Location = new System.Drawing.Point(5, 5);
-            this.chkListStations.Margin = new System.Windows.Forms.Padding(5);
+            this.chkListStations.Location = new System.Drawing.Point(13, 12);
+            this.chkListStations.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.chkListStations.Name = "chkListStations";
-            this.chkListStations.Size = new System.Drawing.Size(149, 165);
+            this.chkListStations.Size = new System.Drawing.Size(397, 363);
             this.chkListStations.TabIndex = 2;
             this.chkListStations.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chkListStations_ItemCheck);
             // 
@@ -103,9 +104,10 @@
             this.panel1.BackgroundImage = global::Digi_Com.Properties.Resources.LeftBanner;
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(-2, -3);
+            this.panel1.Location = new System.Drawing.Point(-5, -7);
+            this.panel1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(184, 299);
+            this.panel1.Size = new System.Drawing.Size(491, 713);
             this.panel1.TabIndex = 3;
             // 
             // label1
@@ -114,9 +116,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(13, 12);
+            this.label1.Location = new System.Drawing.Point(35, 29);
+            this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 17);
+            this.label1.Size = new System.Drawing.Size(197, 39);
             this.label1.TabIndex = 4;
             this.label1.Text = "Station List";
             // 
@@ -142,13 +145,14 @@
             this.btnPlay.IconVisible = true;
             this.btnPlay.IconZoom = 90D;
             this.btnPlay.IsTab = false;
-            this.btnPlay.Location = new System.Drawing.Point(328, 50);
+            this.btnPlay.Location = new System.Drawing.Point(875, 119);
+            this.btnPlay.Margin = new System.Windows.Forms.Padding(21, 17, 21, 17);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.btnPlay.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnPlay.OnHoverTextColor = System.Drawing.Color.White;
             this.btnPlay.selected = false;
-            this.btnPlay.Size = new System.Drawing.Size(163, 48);
+            this.btnPlay.Size = new System.Drawing.Size(435, 114);
             this.btnPlay.TabIndex = 5;
             this.btnPlay.Text = "Play";
             this.btnPlay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -158,9 +162,10 @@
             // 
             // volumeSlider1
             // 
-            this.volumeSlider1.Location = new System.Drawing.Point(236, 22);
+            this.volumeSlider1.Location = new System.Drawing.Point(629, 52);
+            this.volumeSlider1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.volumeSlider1.Name = "volumeSlider1";
-            this.volumeSlider1.Size = new System.Drawing.Size(115, 20);
+            this.volumeSlider1.Size = new System.Drawing.Size(307, 48);
             this.volumeSlider1.TabIndex = 6;
             this.volumeSlider1.VolumeChanged += new System.EventHandler(this.volumeSlider1_VolumeChanged);
             // 
@@ -174,9 +179,10 @@
             this.labelTotalTime.AutoSize = true;
             this.labelTotalTime.BackColor = System.Drawing.Color.Transparent;
             this.labelTotalTime.ForeColor = System.Drawing.Color.White;
-            this.labelTotalTime.Location = new System.Drawing.Point(317, 6);
+            this.labelTotalTime.Location = new System.Drawing.Point(845, 14);
+            this.labelTotalTime.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.labelTotalTime.Name = "labelTotalTime";
-            this.labelTotalTime.Size = new System.Drawing.Size(34, 13);
+            this.labelTotalTime.Size = new System.Drawing.Size(87, 32);
             this.labelTotalTime.TabIndex = 7;
             this.labelTotalTime.Text = "00:00";
             // 
@@ -185,9 +191,10 @@
             this.labelNowTime.AutoSize = true;
             this.labelNowTime.BackColor = System.Drawing.Color.Transparent;
             this.labelNowTime.ForeColor = System.Drawing.Color.White;
-            this.labelNowTime.Location = new System.Drawing.Point(268, 6);
+            this.labelNowTime.Location = new System.Drawing.Point(715, 14);
+            this.labelNowTime.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.labelNowTime.Name = "labelNowTime";
-            this.labelNowTime.Size = new System.Drawing.Size(34, 13);
+            this.labelNowTime.Size = new System.Drawing.Size(87, 32);
             this.labelNowTime.TabIndex = 8;
             this.labelNowTime.Text = "00:00";
             // 
@@ -198,7 +205,7 @@
             this.btnBrowse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.btnBrowse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBrowse.BorderRadius = 0;
-            this.btnBrowse.ButtonText = "Select Audio";
+            this.btnBrowse.ButtonText = "Select File";
             this.btnBrowse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBrowse.DisabledColor = System.Drawing.Color.Gray;
             this.btnBrowse.Iconcolor = System.Drawing.Color.Transparent;
@@ -213,15 +220,16 @@
             this.btnBrowse.IconVisible = true;
             this.btnBrowse.IconZoom = 90D;
             this.btnBrowse.IsTab = false;
-            this.btnBrowse.Location = new System.Drawing.Point(188, 50);
+            this.btnBrowse.Location = new System.Drawing.Point(501, 119);
+            this.btnBrowse.Margin = new System.Windows.Forms.Padding(21, 17, 21, 17);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.btnBrowse.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnBrowse.OnHoverTextColor = System.Drawing.Color.White;
             this.btnBrowse.selected = false;
-            this.btnBrowse.Size = new System.Drawing.Size(134, 48);
+            this.btnBrowse.Size = new System.Drawing.Size(357, 114);
             this.btnBrowse.TabIndex = 4;
-            this.btnBrowse.Text = "Select Audio";
+            this.btnBrowse.Text = "Select File";
             this.btnBrowse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBrowse.Textcolor = System.Drawing.Color.White;
             this.btnBrowse.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -232,9 +240,10 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(306, 6);
+            this.label2.Location = new System.Drawing.Point(816, 14);
+            this.label2.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(10, 13);
+            this.label2.Size = new System.Drawing.Size(24, 32);
             this.label2.TabIndex = 9;
             this.label2.Text = "-";
             // 
@@ -243,9 +252,10 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(188, 5);
+            this.label3.Location = new System.Drawing.Point(501, 12);
+            this.label3.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 13);
+            this.label3.Size = new System.Drawing.Size(201, 32);
             this.label3.TabIndex = 10;
             this.label3.Text = "Playback Time";
             // 
@@ -254,9 +264,10 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(188, 26);
+            this.label4.Location = new System.Drawing.Point(501, 62);
+            this.label4.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 13);
+            this.label4.Size = new System.Drawing.Size(112, 32);
             this.label4.TabIndex = 11;
             this.label4.Text = "Volume";
             // 
@@ -282,13 +293,14 @@
             this.btnRecordAudio.IconVisible = true;
             this.btnRecordAudio.IconZoom = 80D;
             this.btnRecordAudio.IsTab = false;
-            this.btnRecordAudio.Location = new System.Drawing.Point(6, 20);
+            this.btnRecordAudio.Location = new System.Drawing.Point(16, 48);
+            this.btnRecordAudio.Margin = new System.Windows.Forms.Padding(21, 17, 21, 17);
             this.btnRecordAudio.Name = "btnRecordAudio";
             this.btnRecordAudio.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.btnRecordAudio.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnRecordAudio.OnHoverTextColor = System.Drawing.Color.White;
             this.btnRecordAudio.selected = false;
-            this.btnRecordAudio.Size = new System.Drawing.Size(142, 37);
+            this.btnRecordAudio.Size = new System.Drawing.Size(379, 88);
             this.btnRecordAudio.TabIndex = 13;
             this.btnRecordAudio.Text = "Start Recording";
             this.btnRecordAudio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -298,19 +310,21 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(6, 144);
+            this.progressBar1.Location = new System.Drawing.Point(16, 343);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.progressBar1.Maximum = 30;
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(164, 23);
+            this.progressBar1.Size = new System.Drawing.Size(437, 55);
             this.progressBar1.TabIndex = 14;
             // 
             // comboWaveInDevice
             // 
             this.comboWaveInDevice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboWaveInDevice.FormattingEnabled = true;
-            this.comboWaveInDevice.Location = new System.Drawing.Point(6, 63);
+            this.comboWaveInDevice.Location = new System.Drawing.Point(16, 150);
+            this.comboWaveInDevice.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.comboWaveInDevice.Name = "comboWaveInDevice";
-            this.comboWaveInDevice.Size = new System.Drawing.Size(164, 21);
+            this.comboWaveInDevice.Size = new System.Drawing.Size(431, 39);
             this.comboWaveInDevice.TabIndex = 15;
             // 
             // groupBox1
@@ -325,9 +339,11 @@
             this.groupBox1.Controls.Add(this.progressBar1);
             this.groupBox1.Controls.Add(this.comboWaveInDevice);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(188, 104);
+            this.groupBox1.Location = new System.Drawing.Point(501, 248);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(303, 179);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.groupBox1.Size = new System.Drawing.Size(808, 427);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Record Panel";
@@ -337,9 +353,10 @@
             this.btnSendFile.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnSendFile.Enabled = false;
             this.btnSendFile.ForeColor = System.Drawing.Color.Black;
-            this.btnSendFile.Location = new System.Drawing.Point(176, 96);
+            this.btnSendFile.Location = new System.Drawing.Point(469, 229);
+            this.btnSendFile.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnSendFile.Name = "btnSendFile";
-            this.btnSendFile.Size = new System.Drawing.Size(120, 71);
+            this.btnSendFile.Size = new System.Drawing.Size(320, 169);
             this.btnSendFile.TabIndex = 23;
             this.btnSendFile.Text = "Call And Send File";
             this.btnSendFile.UseVisualStyleBackColor = false;
@@ -368,13 +385,14 @@
             this.btnStopRecording.IconVisible = true;
             this.btnStopRecording.IconZoom = 80D;
             this.btnStopRecording.IsTab = false;
-            this.btnStopRecording.Location = new System.Drawing.Point(154, 19);
+            this.btnStopRecording.Location = new System.Drawing.Point(411, 45);
+            this.btnStopRecording.Margin = new System.Windows.Forms.Padding(21, 17, 21, 17);
             this.btnStopRecording.Name = "btnStopRecording";
             this.btnStopRecording.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.btnStopRecording.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnStopRecording.OnHoverTextColor = System.Drawing.Color.White;
             this.btnStopRecording.selected = false;
-            this.btnStopRecording.Size = new System.Drawing.Size(142, 37);
+            this.btnStopRecording.Size = new System.Drawing.Size(379, 88);
             this.btnStopRecording.TabIndex = 22;
             this.btnStopRecording.Text = "Stop Recording";
             this.btnStopRecording.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -386,18 +404,20 @@
             // 
             this.comboWasapiLoopbackDevices.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboWasapiLoopbackDevices.FormattingEnabled = true;
-            this.comboWasapiLoopbackDevices.Location = new System.Drawing.Point(6, 117);
+            this.comboWasapiLoopbackDevices.Location = new System.Drawing.Point(16, 279);
+            this.comboWasapiLoopbackDevices.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.comboWasapiLoopbackDevices.Name = "comboWasapiLoopbackDevices";
-            this.comboWasapiLoopbackDevices.Size = new System.Drawing.Size(164, 21);
+            this.comboWasapiLoopbackDevices.Size = new System.Drawing.Size(431, 39);
             this.comboWasapiLoopbackDevices.TabIndex = 21;
             // 
             // radioButtonWaveIn
             // 
             this.radioButtonWaveIn.AutoSize = true;
             this.radioButtonWaveIn.Checked = true;
-            this.radioButtonWaveIn.Location = new System.Drawing.Point(212, 64);
+            this.radioButtonWaveIn.Location = new System.Drawing.Point(565, 153);
+            this.radioButtonWaveIn.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.radioButtonWaveIn.Name = "radioButtonWaveIn";
-            this.radioButtonWaveIn.Size = new System.Drawing.Size(60, 17);
+            this.radioButtonWaveIn.Size = new System.Drawing.Size(141, 36);
             this.radioButtonWaveIn.TabIndex = 20;
             this.radioButtonWaveIn.TabStop = true;
             this.radioButtonWaveIn.Text = "waveIn";
@@ -408,9 +428,10 @@
             // 
             this.comboWasapiDevices.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboWasapiDevices.FormattingEnabled = true;
-            this.comboWasapiDevices.Location = new System.Drawing.Point(6, 90);
+            this.comboWasapiDevices.Location = new System.Drawing.Point(16, 215);
+            this.comboWasapiDevices.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.comboWasapiDevices.Name = "comboWasapiDevices";
-            this.comboWasapiDevices.Size = new System.Drawing.Size(164, 21);
+            this.comboWasapiDevices.Size = new System.Drawing.Size(431, 39);
             this.comboWasapiDevices.TabIndex = 19;
             // 
             // btnClose
@@ -435,13 +456,14 @@
             this.btnClose.IconVisible = true;
             this.btnClose.IconZoom = 50D;
             this.btnClose.IsTab = false;
-            this.btnClose.Location = new System.Drawing.Point(461, 5);
+            this.btnClose.Location = new System.Drawing.Point(1229, 12);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(21, 17, 21, 17);
             this.btnClose.Name = "btnClose";
             this.btnClose.Normalcolor = System.Drawing.Color.Transparent;
             this.btnClose.OnHovercolor = System.Drawing.Color.Transparent;
             this.btnClose.OnHoverTextColor = System.Drawing.Color.White;
             this.btnClose.selected = false;
-            this.btnClose.Size = new System.Drawing.Size(25, 28);
+            this.btnClose.Size = new System.Drawing.Size(67, 67);
             this.btnClose.TabIndex = 18;
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Textcolor = System.Drawing.Color.White;
@@ -455,12 +477,12 @@
             // 
             // frmMakeCall
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::Digi_Com.Properties.Resources.Login1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(498, 295);
+            this.ClientSize = new System.Drawing.Size(1328, 703);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label4);
@@ -473,6 +495,7 @@
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "frmMakeCall";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Make a Call";
