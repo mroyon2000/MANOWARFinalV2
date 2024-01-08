@@ -35,6 +35,16 @@ namespace Digi_Com.AppForms
         string StationName;
         private string fileName;
 
+
+        public frmMakeCall()
+        {
+            InitializeComponent();
+
+            outputFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyMusic), "DGCOM Recordings");
+
+            Directory.CreateDirectory(outputFolder);
+        }
+
         public frmMakeCall(SerialPort comFP, SerialPort comTR)
         {
             InitializeComponent();

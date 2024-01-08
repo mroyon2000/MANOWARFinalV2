@@ -86,10 +86,13 @@ namespace ManOWarEncLibrary
         #endregion Constructor
 
 
+        /// <summary>
+        /// FileEncrypt
+        /// </summary>
+        /// <param name="inputFileFullPath"></param>
+        /// <param name="secrateKey"></param>
+        /// <returns></returns>
         public string FileEncrypt(string inputFileFullPath,
-            string callerCode,
-            DateTime truncatedDateTime,
-            string frequency,
             string secrateKey)
         {
             string strReturnValue = string.Empty;
@@ -102,7 +105,6 @@ namespace ManOWarEncLibrary
 
             try
             {
-
                 if (File.Exists(inputFileFullPath))
                 {
                     fileOriginal = new FileInfo(inputFileFullPath);
@@ -115,13 +117,13 @@ namespace ManOWarEncLibrary
 
 
                     // Encrypt the string using the key
-                    var finalEncryptedString = EncryptMaster_v2(callerCode, truncatedDateTime, frequency, secrateKey, encryptedString);
+                    //var finalEncryptedString = EncryptMaster_v2(callerCode, truncatedDateTime, frequency, secrateKey, encryptedString);
 
 
 
                     string outputPath = Path.Combine(directoryPath, 
                         fileNameWithoutExtension + "_FR#" + fileExtension + "_#RF" + "_SE#" + 
-                        finalEncryptedString.Item2.ToString() + "#AT_" + ".aes");
+                        "txt" + "#AT_" + ".aes");
 
 
                     // Write the encrypted string to a file with a custom extension

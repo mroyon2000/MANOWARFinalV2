@@ -32,6 +32,8 @@ namespace Digi_Com.AppForms
         string newIncoingStation = null;
         private readonly string outputFolder;
 
+        Form _frmMakeCall = new frmMakeCall();
+
         Form login = null;
 
         private string outputFilename;
@@ -180,7 +182,7 @@ namespace Digi_Com.AppForms
             authfrm.ShowDialog();
             if (authfrm.AuthPass)
             {
-                Form _frmMakeCall = new frmMakeCall(Scport, Trport);
+                _frmMakeCall = new frmMakeCall(Scport, Trport);
                 _frmMakeCall.ShowDialog();
 
 
@@ -493,17 +495,17 @@ namespace Digi_Com.AppForms
                             //Thread.Sleep(1000);
 
 
-                            // For additional security Pin the password of your files
-                            GCHandle gch = GCHandle.Alloc(Global.SecretKey, GCHandleType.Pinned);
-                            // Encrypt the file
+                            //// For additional security Pin the password of your files
+                            //GCHandle gch = GCHandle.Alloc(Global.SecretKey, GCHandleType.Pinned);
+                            //// Encrypt the file
 
 
-                            string newEncFileName = security.FileEncrypt(Global.filename, Global.SecretKey);
+                            string newEncFileName = security.FileEncrypt(Global.filename, Global.GenKey);
 
 
                             // To increase the security of the encryption, delete the given password from the memory !
-                            ZeroMemory(gch.AddrOfPinnedObject(), Global.SecretKey.Length * 2);
-                            gch.Free();
+                            //ZeroMemory(gch.AddrOfPinnedObject(), Global.SecretKey.Length * 2);
+                            //gch.Free();
 
                             //byte[] bytes = File.ReadAllBytes(Global.filename + ".aes");
                             byte[] bytes = File.ReadAllBytes(newEncFileName);
@@ -542,6 +544,7 @@ namespace Digi_Com.AppForms
                                     txtDisplay.Text = "File send successfully!";
                                     txtDisplay.ScrollToCaret();
 
+                                    _frmMakeCall.Dispose();
                                 }
 
 
@@ -616,14 +619,14 @@ namespace Digi_Com.AppForms
                     {
 
                         Global.BobsPublicKey = Response;
-                        Global.SecretKey = _db.power(BigInteger.Parse(Global.BobsPublicKey), Global.PrivateKey, Convert.ToDouble(Global.ValueofP)).ToString(); // Secret key for Alice 
+                        Global.SecretKey = Global.GenKey;// _db.power(BigInteger.Parse(Global.BobsPublicKey), Global.PrivateKey, Convert.ToDouble(Global.ValueofP)).ToString(); // Secret key for Alice 
 
                         this.BeginInvoke(new Action(delegate ()
                         {
                             txtDisplay.Text = "Session Created.";
                             txtDisplay.Text += "\r\nSecret Key: " + Global.GenKey;
 
-                            _db.writeLog("Secret Key: " + Global.GenKey);
+                            _db.writeLog("Secret Key: " + Global.GenKey + " Key Length: " + Global.GenKey.Length.ToString());
 
 
                             txtDisplay.ScrollToCaret();

@@ -44,25 +44,13 @@ namespace Digi_Com.AppForms
         /// Encrypts a file from its path and a plain password.
         /// </summary>
         /// <param name="inputFile"></param>
-        /// <param name="password"></param>
+        /// <param name="key"></param>
         /// 
-        public string FileEncrypt(string inputFile, string password)
+        public string FileEncrypt(string inputFile, string secrateKey)
         {
-            string secrateKey = string.Empty;
             string fileName = string.Empty;
             clsEncLibrary objEncDec2 = new clsEncLibrary();
-            DataTable _data = _db.getScheduleListByDate(DateTime.Now.ToString("2024-01-07"));
-            foreach (DataRow row in _data.Rows)
-            {
-
-                string callerCode = Global.personel_fingre_key_no;
-                DateTime truncatedDateTime = DateTime.Now;
-                string frequency = row["SCHEDULE_FREQ"].ToString();
-                 secrateKey = row["SCHEDULE_SECRET"].ToString();
-                string filePath = inputFile;// @"C:\CF\sampleFile\Free_Test_Data_100KB_PDF.pdf";
-                fileName = objEncDec2.FileEncrypt(filePath, callerCode, truncatedDateTime, frequency, secrateKey);
-            }
-
+            fileName = objEncDec2.FileEncrypt(inputFile, secrateKey);
             return fileName;
 
             ////http://stackoverflow.com/questions/27645527/aes-encryption-on-large-files
