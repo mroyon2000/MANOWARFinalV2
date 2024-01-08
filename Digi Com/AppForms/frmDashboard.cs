@@ -618,12 +618,14 @@ namespace Digi_Com.AppForms
                         Global.BobsPublicKey = Response;
                         Global.SecretKey = _db.power(BigInteger.Parse(Global.BobsPublicKey), Global.PrivateKey, Convert.ToDouble(Global.ValueofP)).ToString(); // Secret key for Alice 
 
-                        _db.writeLog("Secret Key: " + Global.GenKey);
-
                         this.BeginInvoke(new Action(delegate ()
                         {
                             txtDisplay.Text = "Session Created.";
                             txtDisplay.Text += "\r\nSecret Key: " + Global.GenKey;
+
+                            _db.writeLog("Secret Key: " + Global.GenKey);
+
+
                             txtDisplay.ScrollToCaret();
 
                             Trport.WriteLine("304#" + Global.MyStationID + "00" + "#00#00");
