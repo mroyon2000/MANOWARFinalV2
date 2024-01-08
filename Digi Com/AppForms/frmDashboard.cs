@@ -286,8 +286,8 @@ namespace Digi_Com.AppForms
 
 
                 #region Pattern 000#0000
-
-                string pattern = @"^\d{3}#\d{4}#\d+#.+#\d+";
+                string pattern = @"^\d{3}#\d{4}#\d+#.+";
+                //string pattern = @"^\d{3}#\d{4}#\d+#\.+";
                 //string pattern = @"\d{3}#\d{4}";
                 string input = messageFromArduino;
                 Match m = Regex.Match(input, pattern, RegexOptions.IgnoreCase);
