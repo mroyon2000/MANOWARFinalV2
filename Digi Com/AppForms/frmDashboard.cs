@@ -315,6 +315,7 @@ namespace Digi_Com.AppForms
                             string GenKey = tokens[3];
 
                             Global.GenKey = GenKey;
+                            Global.SecretKey = Global.GenKey;
                             Global.receiver_personel_fingre_key_no = caller_personel_fingre_key_no;
                         }
                     }
@@ -495,7 +496,11 @@ namespace Digi_Com.AppForms
                             // For additional security Pin the password of your files
                             GCHandle gch = GCHandle.Alloc(Global.SecretKey, GCHandleType.Pinned);
                             // Encrypt the file
+
+
                             string newEncFileName = security.FileEncrypt(Global.filename, Global.SecretKey);
+
+
                             // To increase the security of the encryption, delete the given password from the memory !
                             ZeroMemory(gch.AddrOfPinnedObject(), Global.SecretKey.Length * 2);
                             gch.Free();

@@ -545,6 +545,7 @@ namespace Digi_Com.AppForms
                         string frequency = row["SCHEDULE_FREQ"].ToString();
                         string secrateKey = row["SCHEDULE_SECRET"].ToString();
                         Global.GenKey = objEncDec2.GetKeyTagGenerated(callerCode, truncatedDateTime, frequency, secrateKey);
+                        Global.SecretKey = Global.GenKey;
                     }
                 }
 
