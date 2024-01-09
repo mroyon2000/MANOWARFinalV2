@@ -9,6 +9,8 @@ using System.IO.Ports;
 using System.Linq;
 using System.Numerics;
 using System.Runtime.InteropServices;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -720,9 +722,10 @@ namespace Digi_Com.AppForms
                         }
                     }
 
+                    tempGenKey = DeepCopy(Global.GenKey);
+
                     GCHandle gch = GCHandle.Alloc(Global.SecretKey, GCHandleType.Pinned);
 
-                    tempGenKey = Global.GenKey;
                     // Decrypt the file
                     security.FileDecrypt(outputFilename, Global.GenKey);
 
@@ -801,6 +804,18 @@ namespace Digi_Com.AppForms
                 //  return false;
             }
         }
+
+        public T DeepCopy<T>(T obj)
+        {
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                IFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(memoryStream, obj);
+                memoryStream.Seek(0, SeekOrigin.Begin);
+                return (T)formatter.Deserialize(memoryStream);
+            }
+        }
+
 
         private void frmDashboard_Activated(object sender, EventArgs e)
         {
