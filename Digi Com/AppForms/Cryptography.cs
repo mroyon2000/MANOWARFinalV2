@@ -20,17 +20,15 @@ namespace Digi_Com.AppForms
 
 
         DB _db = new DB();
-       
+
 
         /// <summary>
-        /// Encrypts a file from its path and a plain password.
+        /// FileEncrypt a file from its path and a plain password.
         /// </summary>
         /// <param name="inputFile"></param>
-        /// <param name="key"></param>
-        /// 
+        /// <param name="secrateKey"></param>
         public string FileEncrypt(string inputFile, string secrateKey)
         {
-<<<<<<< Updated upstream
             try
             {
                 string fileName = string.Empty;
@@ -42,46 +40,29 @@ namespace Digi_Com.AppForms
             {
                 throw ex;
             }
-=======
-            string fileName = string.Empty;
-            clsEncLibrary objEncDec2 = new clsEncLibrary();
-            fileName = objEncDec2.FileEncrypt(inputFile, secrateKey);
-
-            return fileName;
->>>>>>> Stashed changes
-
         }
 
 
         /// <summary>
-        /// Decrypts an encrypted file with the FileEncrypt method through its path and the plain password.
+        /// FileDecrypt an encrypted file with the FileEncrypt method through its path and the plain password.
         /// </summary>
         /// <param name="inputFile"></param>
-        /// <param name="outputFile"></param>
-        /// <param name="password"></param>
-        public void FileDecrypt(string inputFile, string outputFile, string password)
+        /// <param name="secrateKey"></param>
+
+        public string  FileDecrypt(string inputFile, string secrateKey)
         {
             string fileName = string.Empty;
-            string secrateKey = string.Empty;
-
+            clsEncLibrary objEncDec2 = new clsEncLibrary();
             try
             {
-                clsEncLibrary objEncDec2 = new clsEncLibrary();
-                DataTable _data = _db.getScheduleListByDate(DateTime.Now.ToString("yyyy-MM-dd"));
-                foreach (DataRow row in _data.Rows)
-                {
-                    string callerCode = Global.ReceivedCallerID;// Global.personel_fingre_key_no;
-                    DateTime truncatedDateTime = DateTime.Now;
-                    string frequency = row["SCHEDULE_FREQ"].ToString();
-                    secrateKey = row["SCHEDULE_SECRET"].ToString();
-                    string filePath = inputFile;// @"C:\CF\sampleFile\Free_Test_Data_100KB_PDF.pdf";
-                    //fileName = objEncDec2.FileDeccrypt(filePath);
-                }
+                fileName = objEncDec2.FileDeccrypt(inputFile, secrateKey);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+            objEncDec2.Dispose();
+            return fileName;
         }
 
 

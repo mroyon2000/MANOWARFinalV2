@@ -727,7 +727,7 @@ namespace Digi_Com.AppForms
                     GCHandle gch = GCHandle.Alloc(Global.SecretKey, GCHandleType.Pinned);
 
                     // Decrypt the file
-                    //security.FileDecrypt(outputFilename + ".aes", outputFilename, Global.SecretKey);
+                    security.FileDecrypt(outputFilename, Global.GenKey);
 
                     // To increase the security of the decryption, delete the used password from the memory !
                     ZeroMemory(gch.AddrOfPinnedObject(), Global.SecretKey.Length * 2);

@@ -22,7 +22,7 @@ namespace testApp
             string callerCode = "CAL01";
             DateTime truncatedDateTime = DateTime.Now;
             string frequency = "FRE0091";
-            string secrateKey = "secretKey";
+            string secrateKey = "TkUxcVFYbE9SRUY0VFVSbmVVMW5QVDB6TGprNU1URXlNak16TkRRPQ==";
 
             //Console.WriteLine("Starting encryption process.");
 
@@ -35,8 +35,13 @@ namespace testApp
 
 
 
-            //string filePath = @"C:\Users\rezay\Music\DGCOM Recordings\Sample-1.txt";
+            string fileToEncryptPath = @"C:\fileTest\PART1.txt";
+            string fileToDecryptPath = @"C:\fileTest\_Enc_PART101_10_2024_00_27_59.txt";
 
+            //objEncDec2.FileEncrypt(fileToEncryptPath, secrateKey);
+
+
+            objEncDec2.FileDeccrypt(fileToDecryptPath, secrateKey);
             //objEncDec2.FileEncrypt(filePath, callerCode, truncatedDateTime, frequency, secrateKey);
 
 
@@ -45,35 +50,7 @@ namespace testApp
             //objEncDec2.FileDeccrypt(filePath2);
 
 
-            List<string> originalList = new List<string>
-        {
-            "a",
-            "b",
-            "c"
-        };
-            byte[] byteArray = objEncDec2.ListToByteArray(originalList);
 
-            // Convert byte array to string
-            string byteArrayString = objEncDec2.ByteArrayToString(byteArray);
-
-            // Convert string back to byte array
-            byte[] reversedByteArray = objEncDec2.StringToByteArray(byteArrayString);
-
-            // Convert byte array back to list
-            List<string> reversedList = objEncDec2.ByteArrayToList(reversedByteArray);
-
-
-            Console.WriteLine("Original List:");
-            foreach (var obj in originalList)
-            {
-                Console.WriteLine($"{obj}");
-            }
-
-            Console.WriteLine("\nList after serialization and deserialization:");
-            foreach (var obj in reversedList)
-            {
-                Console.WriteLine($"{obj}");
-            }
 
             objEncDec2.Dispose();
 
