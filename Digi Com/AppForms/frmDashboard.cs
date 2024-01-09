@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManOWarEncLibrary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -313,7 +314,26 @@ namespace Digi_Com.AppForms
                     {
                         if (tokens[2] != "00")
                         {
+                            clsEncLibrary objEncDec2 = new clsEncLibrary();
+                            DateTime restoredDateTime = DateTime.Now;
                             string caller_personel_fingre_key_no = tokens[2];
+                            string timestampAsString = tokens[3];
+                            restoredDateTime = objEncDec2.ConvertFromUnixTimestamp(long.Parse(timestampAsString));
+
+                            DataTable _data = _db.getScheduleListByDate(restoredDateTime.ToString("yyyy-MM-dd"));
+                            if (_data != null && _data.Rows.Count > 0)
+                            {
+                                foreach (DataRow row in _data.Rows)
+                                {
+                                    string callerCode = Global.personel_fingre_key_no;
+                                    string frequency = row["SCHEDULE_FREQ"].ToString();
+                                    string secrateKey = row["SCHEDULE_SECRET"].ToString();
+                                    Global.GenKey = objEncDec2.GetKeyTagGenerated(caller_personel_fingre_key_no, restoredDateTime, frequency, secrateKey);
+                                    Global.SecretKey = Global.GenKey;
+                                }
+                            }
+
+
                             string GenKey = tokens[3];
 
                             Global.GenKey = GenKey;
@@ -543,7 +563,6 @@ namespace Digi_Com.AppForms
                                 {
                                     txtDisplay.Text = "File send successfully!";
                                     txtDisplay.ScrollToCaret();
-
                                     _frmMakeCall.Dispose();
                                 }
 

@@ -803,5 +803,17 @@ namespace ManOWarEncLibrary
 
             return key;
         }
+
+        // Convert DateTime to Unix timestamp (seconds)
+        public long ConvertToUnixTimestamp(DateTime dateTime)
+        {
+            return (long)(dateTime - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalSeconds;
+        }
+
+        // Convert Unix timestamp (seconds) to DateTime
+        public DateTime ConvertFromUnixTimestamp(long timestamp)
+        {
+            return new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(timestamp);
+        }
     }
 }
