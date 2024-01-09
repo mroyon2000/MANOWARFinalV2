@@ -522,12 +522,12 @@ namespace Digi_Com.AppForms
 
                             string newEncFileName = security.FileEncrypt(Global.filename, Global.GenKey);
 
-
                             // To increase the security of the encryption, delete the given password from the memory !
                             //ZeroMemory(gch.AddrOfPinnedObject(), Global.SecretKey.Length * 2);
                             //gch.Free();
 
                             //byte[] bytes = File.ReadAllBytes(Global.filename + ".aes");
+                            
                             byte[] bytes = File.ReadAllBytes(newEncFileName);
 
                             Trport.WriteLine("500#" + Global.MyStationID + "00#" + bytes.Length);

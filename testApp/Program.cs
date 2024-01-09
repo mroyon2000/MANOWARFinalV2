@@ -35,14 +35,45 @@ namespace testApp
 
 
 
-            string filePath = @"C:\Users\rezay\Music\DGCOM Recordings\Sample-1.txt";
+            //string filePath = @"C:\Users\rezay\Music\DGCOM Recordings\Sample-1.txt";
 
-            objEncDec2.FileEncrypt(filePath, callerCode, truncatedDateTime, frequency, secrateKey);
+            //objEncDec2.FileEncrypt(filePath, callerCode, truncatedDateTime, frequency, secrateKey);
 
 
-            string filePath2 = @"C:\Users\rezay\Music\DGCOM Recordings\Sample-1_FR#.txt_#RF_SE#136#AT_.m-o-war";
+            //string filePath2 = @"C:\Users\rezay\Music\DGCOM Recordings\Sample-1_FR#.txt_#RF_SE#136#AT_.m-o-war";
 
-            objEncDec2.FileDeccrypt(filePath2);
+            //objEncDec2.FileDeccrypt(filePath2);
+
+
+            List<string> originalList = new List<string>
+        {
+            "a",
+            "b",
+            "c"
+        };
+            byte[] byteArray = objEncDec2.ListToByteArray(originalList);
+
+            // Convert byte array to string
+            string byteArrayString = objEncDec2.ByteArrayToString(byteArray);
+
+            // Convert string back to byte array
+            byte[] reversedByteArray = objEncDec2.StringToByteArray(byteArrayString);
+
+            // Convert byte array back to list
+            List<string> reversedList = objEncDec2.ByteArrayToList(reversedByteArray);
+
+
+            Console.WriteLine("Original List:");
+            foreach (var obj in originalList)
+            {
+                Console.WriteLine($"{obj}");
+            }
+
+            Console.WriteLine("\nList after serialization and deserialization:");
+            foreach (var obj in reversedList)
+            {
+                Console.WriteLine($"{obj}");
+            }
 
             objEncDec2.Dispose();
 
