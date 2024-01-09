@@ -41,6 +41,7 @@ namespace Digi_Com.AppForms
 
         byte[] receivedByte = null;
 
+        string tempGenKey = "";
         double receivedLength, fulllength;
         bool _isReceiving = false;
         bool isCaller = false;
@@ -556,7 +557,7 @@ namespace Digi_Com.AppForms
                             {
                                 if (Global.isCaller)
                                 {
-                                    txtDisplay.Text = "File send successfully! \n\r Session Key: " + Global.GenKey;
+                                    txtDisplay.Text = "File send successfully! \r\n Session Key: " + Global.GenKey;
                                     txtDisplay.ScrollToCaret();
                                     _frmMakeCall.Dispose();
                                 }
@@ -721,6 +722,7 @@ namespace Digi_Com.AppForms
 
                     GCHandle gch = GCHandle.Alloc(Global.SecretKey, GCHandleType.Pinned);
 
+                    tempGenKey = Global.GenKey;
                     // Decrypt the file
                     security.FileDecrypt(outputFilename, Global.GenKey);
 
@@ -734,7 +736,7 @@ namespace Digi_Com.AppForms
                     _db.writeLog("FIle Received.");
                     this.BeginInvoke(new Action(delegate ()
                     {
-                        txtDisplay.Text = "File Received!\n\r Session Key: " + Global.GenKey ;
+                        txtDisplay.Text = "File Received! \r\n Session Key: " + tempGenKey ;
                         txtDisplay.ScrollToCaret();
 
                         // btnPlayMessage.Enabled = true;
