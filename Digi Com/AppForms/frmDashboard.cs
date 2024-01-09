@@ -330,15 +330,10 @@ namespace Digi_Com.AppForms
                                     string secrateKey = row["SCHEDULE_SECRET"].ToString();
                                     Global.GenKey = objEncDec2.GetKeyTagGenerated(caller_personel_fingre_key_no, restoredDateTime, frequency, secrateKey);
                                     Global.SecretKey = Global.GenKey;
+                                    Global.receiver_personel_fingre_key_no = caller_personel_fingre_key_no;
                                 }
                             }
-
-
-                            string GenKey = tokens[3];
-
-                            Global.GenKey = GenKey;
-                            Global.SecretKey = Global.GenKey;
-                            Global.receiver_personel_fingre_key_no = caller_personel_fingre_key_no;
+                          
                         }
                     }
 
