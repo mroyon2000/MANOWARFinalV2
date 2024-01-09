@@ -556,7 +556,7 @@ namespace Digi_Com.AppForms
                             {
                                 if (Global.isCaller)
                                 {
-                                    txtDisplay.Text = "File send successfully!";
+                                    txtDisplay.Text = "File send successfully! \n\r Session Key: " + Global.GenKey;
                                     txtDisplay.ScrollToCaret();
                                     _frmMakeCall.Dispose();
                                 }
@@ -734,10 +734,11 @@ namespace Digi_Com.AppForms
                     _db.writeLog("FIle Received.");
                     this.BeginInvoke(new Action(delegate ()
                     {
-                        txtDisplay.Text = "File Received!";
+                        txtDisplay.Text = "File Received!\n\r Session Key: " + Global.GenKey ;
                         txtDisplay.ScrollToCaret();
-                            // btnPlayMessage.Enabled = true;
-                            wplayer.controls.stop();
+
+                        // btnPlayMessage.Enabled = true;
+                        wplayer.controls.stop();
                         wplayer.settings.setMode("loop", false);
                             //When Call Accepted
                             wplayer.URL = "fileReceived.mp3";
