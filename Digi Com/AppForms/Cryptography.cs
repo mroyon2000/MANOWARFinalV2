@@ -30,6 +30,7 @@ namespace Digi_Com.AppForms
         /// 
         public string FileEncrypt(string inputFile, string secrateKey)
         {
+<<<<<<< Updated upstream
             try
             {
                 string fileName = string.Empty;
@@ -41,6 +42,13 @@ namespace Digi_Com.AppForms
             {
                 throw ex;
             }
+=======
+            string fileName = string.Empty;
+            clsEncLibrary objEncDec2 = new clsEncLibrary();
+            fileName = objEncDec2.FileEncrypt(inputFile, secrateKey);
+
+            return fileName;
+>>>>>>> Stashed changes
 
         }
 
