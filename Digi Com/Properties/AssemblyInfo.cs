@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Digi Com")]
+[assembly: AssemblyTitle("Wireless Communication with PFS")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Digi Com")]
-[assembly: AssemblyCopyright("Copyright ©  2019")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCompany("Masters Thesis")]
+[assembly: AssemblyProduct("Wireless Communication with PFS")]
+[assembly: AssemblyCopyright("Copyright ©  2023")]
+[assembly: AssemblyTrademark("MAN-O-WAR")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 

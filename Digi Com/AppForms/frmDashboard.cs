@@ -59,6 +59,8 @@ namespace Digi_Com.AppForms
 
         }
 
+
+
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             _db.writeLog("User " + Global.User["PERSONEL_NAME"].ToString() + " log out.");
@@ -78,6 +80,12 @@ namespace Digi_Com.AppForms
 
         }
 
+
+        /// <summary>
+        /// Form Load
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmDashboard_Load(object sender, EventArgs e)  
         {
 
@@ -108,7 +116,9 @@ namespace Digi_Com.AppForms
 
         }
 
-
+        /// <summary>
+        /// Port open management
+        /// </summary>
         private void PortManagementOpener()
         {
             portManager = new SerialPortManager();
@@ -130,7 +140,9 @@ namespace Digi_Com.AppForms
             if (!Trport.IsOpen) Trport.Open();
         }
 
-
+        /// <summary>
+        /// Port Close Management
+        /// </summary>
         private void PortManagementCloser()
         {
             if (Trport != null && Trport.IsOpen)
@@ -277,6 +289,11 @@ namespace Digi_Com.AppForms
             //   textBoxIncoming.Dispatcher.BeginInvoke(new Action(delegate () { this.textBoxIncoming.Text += messageFromArduino; }));
         }
 
+        /// <summary>
+        /// TrPort_DataReceived main port listener
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void TrPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
 
@@ -698,6 +715,7 @@ namespace Digi_Com.AppForms
             }
 
         }
+
         public void Display(byte[] inputData)
         {
 
