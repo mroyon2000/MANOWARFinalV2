@@ -104,8 +104,6 @@ namespace ManOWarEncLibrary
             long fileSize = 0;
             FileInfo fileOriginal = null;
 
-            
-
             try
             {
                 if (File.Exists(inputFileFullPath))
@@ -143,14 +141,14 @@ namespace ManOWarEncLibrary
         /// <param name="secrateKey"></param>
         /// <returns></returns>
         public string EncryptMaster_v3(
-            string encryptedString,
+            string plainString,
             string secrateKey)
         {
             string encryptedValue = string.Empty;
             try
             {
                 string filePathEnc = Path.Combine(Environment.CurrentDirectory, "LogFile/EncData.txt");
-                string myOriginalValue = encryptedString;
+                string myOriginalValue = plainString;
                 // Specify the block size (256 bits = 32 bytes)
                 int blockSize = 32;
                 // Create a list to store the 128-bit blocks
@@ -303,15 +301,15 @@ namespace ManOWarEncLibrary
         /// <returns></returns>
         public string EncryptStringBasic(string plainText, string key)
         {
-            byte[] inputBytes = Encoding.UTF8.GetBytes(plainText);
+            byte[] encryptedBytes = Encoding.UTF8.GetBytes(plainText);
             byte[] keyBytes = Encoding.UTF8.GetBytes(key);
 
-            for (int i = 0; i < inputBytes.Length; i++)
+            for (int i = 0; i < encryptedBytes.Length; i++)
             {
-                inputBytes[i] = (byte)(inputBytes[i] ^ keyBytes[i % keyBytes.Length]);
+                encryptedBytes[i] = (byte)(encryptedBytes[i] ^ keyBytes[i % keyBytes.Length]);
             }
 
-            return Convert.ToBase64String(inputBytes);
+            return Convert.ToBase64String(encryptedBytes);
         }
 
         /// <summary>
@@ -366,6 +364,26 @@ namespace ManOWarEncLibrary
             }
         }
 
+
+        /// <summary>
+        /// GetKeyTagGenerated
+        /// </summary>
+        /// <param name="callerCode"></param>
+        /// <param name="truncatedDateTime"></param>
+        /// <param name="frequency"></param>
+        /// <param name="secrateKey"></param>
+        /// <returns></returns>
+        public string GetKeyTagGenerated(string callerCode, DateTime truncatedDateTime, string frequency, string secrateKey)
+        {
+            string timestamp = truncatedDateTime.ToString("yyyyMMddHHmmss");
+            timestamp = encryptSimple(timestamp);
+            string key = encryptSimple(callerCode + timestamp + frequency + secrateKey);
+            key = Convert.ToBase64String(Encoding.UTF8.GetBytes(key));
+
+            return key;
+        }
+
+ 
         /// <summary>
         /// encryptSimple
         /// </summary>
@@ -384,18 +402,7 @@ namespace ManOWarEncLibrary
             }
         }
 
-
-        public string GetKeyTagGenerated(string callerCode, DateTime truncatedDateTime, string frequency, string secrateKey)
-        {
-            string timestamp = truncatedDateTime.ToString("yyyyMMddHHmmss");
-            timestamp = encryptSimple(timestamp);
-            string key = encryptSimple(callerCode + timestamp + frequency + secrateKey);
-            key = Convert.ToBase64String(Encoding.UTF8.GetBytes(key));
-
-            return key;
-        }
-
-        /// <summary>
+     /// <summary>
         /// ConvertToUnixTimestamp
         /// </summary>
         /// <param name="dateTime"></param>

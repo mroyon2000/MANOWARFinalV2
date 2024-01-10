@@ -530,6 +530,12 @@ namespace Digi_Com.AppForms
             
         }
 
+
+        /// <summary>
+        /// CALL and SEND button to start the transaction
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSendFile_Click(object sender, EventArgs e)
         {
             //Send Write File to COM Port
@@ -579,9 +585,6 @@ namespace Digi_Com.AppForms
                     MessageBox.Show("You Must select a Destination Station");
                 }
             }
-
-             
-
         }
     }
 }

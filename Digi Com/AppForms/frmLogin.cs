@@ -103,6 +103,12 @@ namespace Digi_Com.AppForms
 
         }
 
+
+        /// <summary>
+        /// finger touch event to get data from port Arduin Uno
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void comPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
            
@@ -158,6 +164,8 @@ namespace Digi_Com.AppForms
             //   textBoxIncoming.Dispatcher.BeginInvoke(new Action(delegate () { this.textBoxIncoming.Text += messageFromArduino; }));
         }
 
+
+        
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
@@ -182,6 +190,7 @@ namespace Digi_Com.AppForms
 
         }
 
+        // Main login button event
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
            

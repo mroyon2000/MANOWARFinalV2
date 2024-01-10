@@ -132,9 +132,6 @@ namespace Digi_Com.AppForms
         }
         private void _loadSchedule()
         {
-
-
-
             lvSchedules.BeginUpdate();
             lvSchedules.Items.Clear();
             try
@@ -148,17 +145,8 @@ namespace Digi_Com.AppForms
                         item.SubItems.Add(row["SCHEDULE_DATE"].ToString());
                         item.SubItems.Add(row["SCHEDULE_FREQ"].ToString());
                         item.SubItems.Add(row["SCHEDULE_SECRET"].ToString());
-                       
-
                         lvSchedules.Items.Add(item);
                     }
-
-
-
-               
-
-
-
             }
             catch (Exception ex)
             {

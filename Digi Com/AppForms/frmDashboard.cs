@@ -191,6 +191,12 @@ namespace Digi_Com.AppForms
             getStationCount();
         }
 
+
+        /// <summary>
+        /// btnMakeCall_Click make call event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnMakeCall_Click(object sender, EventArgs e)
         {
             frmAuth authfrm = new frmAuth();
@@ -687,7 +693,6 @@ namespace Digi_Com.AppForms
                             wplayer.URL = "downloading.mp3";
                             wplayer.controls.play();
                             wplayer.settings.setMode("loop", true);
-
                         }
                   ));
 
@@ -698,15 +703,15 @@ namespace Digi_Com.AppForms
 
                 }
                 #endregion
+
                 if (_isReceiving)
                 {
                     int bytes = Trport.BytesToRead;
                     byte[] byte_buffer = new byte[bytes];
                     Trport.Read(byte_buffer, 0, bytes);
                     Display(byte_buffer);
-
-
                 }
+
 
             }
             catch (Exception exc)
@@ -716,6 +721,10 @@ namespace Digi_Com.AppForms
 
         }
 
+        /// <summary>
+        /// REceive Encrypted file and then decrypt with generated key
+        /// </summary>
+        /// <param name="inputData"></param>
         public void Display(byte[] inputData)
         {
 
@@ -774,47 +783,6 @@ namespace Digi_Com.AppForms
                     PortManagementOpener();
                 }
 
-
-                //using (FS = new FileStream(outputFilename + ".aes", FileMode.Append, FileAccess.Write))
-                //{
-                //    receivedLength = receivedLength + inputData.Length;
-
-                //    FS.Write(inputData, 0, inputData.Length);
-
-
-                //    if (receivedLength == fulllength)
-                //    {
-                //        FS.Close();
-                //        GCHandle gch = GCHandle.Alloc(Global.SecretKey, GCHandleType.Pinned);
-
-                //        // Decrypt the file
-                //        security.FileDecrypt(outputFilename + ".aes", outputFilename, Global.SecretKey);
-
-                //        // To increase the security of the decryption, delete the used password from the memory !
-                //        ZeroMemory(gch.AddrOfPinnedObject(), Global.SecretKey.Length * 2);
-                //        gch.Free();
-
-                //        _isReceiving = false;
-                //        receivedLength = 0;
-                //        fulllength = 0;
-                //        _db.writeLog("FIle Received.");
-                //        this.BeginInvoke(new Action(delegate ()
-                //        {
-                //            txtDisplay.Text = "File Received!";
-                //            txtDisplay.ScrollToCaret();
-                //            // btnPlayMessage.Enabled = true;
-                //            wplayer.controls.stop();
-                //            wplayer.settings.setMode("loop", false);
-                //            //When Call Accepted
-                //            wplayer.URL = "fileReceived.mp3";
-                //            wplayer.controls.play();
-                //            wplayer.settings.setMode("loop", false);
-                //        }
-                //       ));
-                //    }
-
-                //    // return true;
-                //}
                 playAudio();
             }
             catch (Exception ex)
